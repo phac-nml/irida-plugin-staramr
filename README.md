@@ -1,0 +1,1 @@
+# irida-plugin-staramr
