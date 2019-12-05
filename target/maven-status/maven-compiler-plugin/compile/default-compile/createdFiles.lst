@@ -1,0 +1,5 @@
+META-INF/extensions.idx
+ca/corefacility/bioinformatics/irida/plugin/amrdetection/AMRDetectionUpdater$AMRResult.class
+ca/corefacility/bioinformatics/irida/plugin/amrdetection/AMRDetectionPlugin.class
+ca/corefacility/bioinformatics/irida/plugin/amrdetection/AMRDetectionPlugin$PluginInfo.class
+ca/corefacility/bioinformatics/irida/plugin/amrdetection/AMRDetectionUpdater.class
