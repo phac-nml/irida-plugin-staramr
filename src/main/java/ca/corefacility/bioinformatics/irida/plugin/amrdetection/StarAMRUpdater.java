@@ -1,4 +1,4 @@
-package ca.corefacility.bioinformatics.irida.plugin.amrdetection;
+package ca.corefacility.bioinformatics.irida.plugin.staramr;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -39,8 +39,8 @@ import ca.corefacility.bioinformatics.irida.service.workflow.IridaWorkflowsServi
  * {@link AnalysisSampleUpdater} for AMR detection results to be written to
  * metadata of {@link Sample}s.
  */
-public class AMRDetectionUpdater implements AnalysisSampleUpdater {
-	private static final Logger logger = LoggerFactory.getLogger(AMRDetectionUpdater.class);
+public class StarAMRUpdater implements AnalysisSampleUpdater {
+	private static final Logger logger = LoggerFactory.getLogger(StarAMRUpdater.class);
 	private static final String STARAMR_SUMMARY = "staramr-summary.tsv";
 
 	private static final Splitter SPLITTER = Splitter.on('\t');
@@ -54,13 +54,13 @@ public class AMRDetectionUpdater implements AnalysisSampleUpdater {
 	private IridaWorkflowsService iridaWorkflowsService;
 
 	/**
-	 * Builds a new {@link AMRDetectionUpdater} with the following information.
+	 * Builds a new {@link StarAMRUpdater} with the following information.
 	 * 
 	 * @param metadataTemplateService The {@link MetadatTemplateService}.
 	 * @param sampleService           The {@link SampleService}.
 	 * @param iridaWorkflowsService   The {@link IridaWorkflowsService}.
 	 */
-	public AMRDetectionUpdater(MetadataTemplateService metadataTemplateService, SampleService sampleService,
+	public StarAMRUpdater(MetadataTemplateService metadataTemplateService, SampleService sampleService,
 			IridaWorkflowsService iridaWorkflowsService) {
 		this.metadataTemplateService = metadataTemplateService;
 		this.sampleService = sampleService;
@@ -77,10 +77,10 @@ public class AMRDetectionUpdater implements AnalysisSampleUpdater {
 	 * @throws PostProcessingException If there was an issue parsing the file.
 	 */
 	private AMRResult getStarAMRResults(Path staramrFilePath) throws IOException, PostProcessingException {
-		final int GENOTYPE_INDEX = 1;
-		final int DRUG_INDEX = 2;
+		final int GENOTYPE_INDEX = 2;
+		final int DRUG_INDEX = 3;
 
-		final int MAX_TOKENS = 3;
+		final int MAX_TOKENS = 11;
 
 		@SuppressWarnings("resource")
 		BufferedReader reader = new BufferedReader(new FileReader(staramrFilePath.toFile()));
@@ -142,7 +142,7 @@ public class AMRDetectionUpdater implements AnalysisSampleUpdater {
 			sampleService.updateFields(sample.getId(), ImmutableMap.of("metadata", sample.getMetadata()));
 		} catch (IOException e) {
 			logger.error("Got IOException", e);
-			throw new PostProcessingException("Error parsing amr detection results", e);
+			throw new PostProcessingException("Error parsing staramr results", e);
 		} catch (IridaWorkflowNotFoundException e) {
 			logger.error("Got IridaWorkflowNotFoundException", e);
 			throw new PostProcessingException("Workflow is not found", e);
@@ -189,6 +189,6 @@ public class AMRDetectionUpdater implements AnalysisSampleUpdater {
 	 */
 	@Override
 	public AnalysisType getAnalysisType() {
-		return AMRDetectionPlugin.STAR_AMR;
+		return StarAMRPlugin.STAR_AMR;
 	}
 }

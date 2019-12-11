@@ -9,13 +9,10 @@
     <requiresSingleSample>true</requiresSingleSample>
   </inputs>
   <parameters>
-    <parameter name="shovill-1-library.lib_type" defaultValue="collection">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="library.lib_type"/>
-    </parameter>
     <parameter name="shovill-1-adv.nocorr" defaultValue="false">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.nocorr"/>
     </parameter>
-    <parameter name="shovill-1-adv.mincov" defaultValue="2">
+    <parameter name="shovill-1-adv.mincov" defaultValue="1">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.mincov"/>
     </parameter>
     <parameter name="shovill-1-trim" defaultValue="false">
@@ -27,9 +24,6 @@
     <parameter name="shovill-1-adv.depth" defaultValue="100">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.depth"/>
     </parameter>
-    <parameter name="shovill-1-log" defaultValue="true">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="log"/>
-    </parameter>
     <parameter name="shovill-1-adv.gsize" defaultValue="">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.gsize"/>
     </parameter>
@@ -39,7 +33,7 @@
     <parameter name="shovill-1-adv.opts" defaultValue="">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.opts"/>
     </parameter>
-    <parameter name="shovill-1-adv.minlen" defaultValue="1000">
+    <parameter name="shovill-1-adv.minlen" defaultValue="1">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.minlen"/>
     </parameter>
     <parameter name="shovill-1-assembler" defaultValue="spades">
@@ -59,9 +53,6 @@
     </parameter>
     <parameter name="staramr-2-advanced.genome_size_lower_bound" defaultValue="4000000">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.genome_size_lower_bound"/>
-    </parameter>
-    <parameter name="staramr-2-advanced.exclude_genes.exclude_genes_condition" defaultValue="default">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.exclude_genes.exclude_genes_condition"/>
     </parameter>
     <parameter name="staramr-2-advanced.plength_pointfinder" defaultValue="95.0">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.plength_pointfinder"/>

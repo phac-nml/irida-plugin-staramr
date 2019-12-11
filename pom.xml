@@ -5,14 +5,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ca.corefacility.bioinformatics.irida</groupId>
-	<artifactId>amr-detection</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<artifactId>staramr</artifactId>
+	<version>0.1.0</version>
 
 	<properties>
-		<plugin.id>amr-detection</plugin.id>
-		<plugin.class>ca.corefacility.bioinformatics.irida.plugin.amrdetection.AMRDetectionPlugin</plugin.class>
-		<plugin.version>0.2.0-SNAPSHOT</plugin.version>
-		<plugin.provider>Aaron Petkau</plugin.provider>
+		<plugin.id>staramr</plugin.id>
+		<plugin.class>ca.corefacility.bioinformatics.irida.plugin.staramr.StarAMRPlugin</plugin.class>
+		<plugin.version>0.1.0</plugin.version>
+		<plugin.provider>Public Health Agency of Canada</plugin.provider>
 		<plugin.dependencies></plugin.dependencies>
 		<plugin.requires.runtime>1.0.0</plugin.requires.runtime>
 

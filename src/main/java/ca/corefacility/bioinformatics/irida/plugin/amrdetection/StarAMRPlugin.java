@@ -1,4 +1,4 @@
-package ca.corefacility.bioinformatics.irida.plugin.amrdetection;
+package ca.corefacility.bioinformatics.irida.plugin.staramr;
 
 import java.awt.Color;
 import java.util.Optional;
@@ -21,11 +21,11 @@ import ca.corefacility.bioinformatics.irida.service.workflow.IridaWorkflowsServi
  * A plugin for detecting AMR genes using both
  * <a href="https://github.com/phac-nml/staramr">staramr</a>.
  */
-public class AMRDetectionPlugin extends Plugin {
+public class StarAMRPlugin extends Plugin {
 
 	public static AnalysisType STAR_AMR = new AnalysisType("STAR_AMR");
 
-	public AMRDetectionPlugin(PluginWrapper wrapper) {
+	public StarAMRPlugin(PluginWrapper wrapper) {
 		super(wrapper);
 	}
 
@@ -39,7 +39,7 @@ public class AMRDetectionPlugin extends Plugin {
 		@Override
 		public Optional<AnalysisSampleUpdater> getUpdater(MetadataTemplateService metadataTemplateService,
 				SampleService sampleService, IridaWorkflowsService iridaWorkflowsService) throws IridaPluginException {
-			return Optional.of(new AMRDetectionUpdater(metadataTemplateService, sampleService, iridaWorkflowsService));
+			return Optional.of(new StarAMRUpdater(metadataTemplateService, sampleService, iridaWorkflowsService));
 		}
 
 		@Override
