@@ -32,7 +32,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "b60c50af-317d-414b-a467-d9bb69cc50f3"
+                    "uuid": "802c0656-d720-4ed7-a0ba-ef8303d90789"
                 }
             ]
         },
@@ -131,7 +131,12 @@
                     "output_name": "contigs"
                 }
             },
-            "inputs": [],
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool staramr",
+                    "name": "genomes"
+                }
+            ],
             "label": null,
             "name": "staramr",
             "outputs": [
@@ -178,25 +183,17 @@
                     "action_type": "HideDatasetAction",
                     "output_name": "blast_hits"
                 },
-                "HideDatasetActiondetailed_summary": {
-                    "action_arguments": {},
-                    "action_type": "HideDatasetAction",
-                    "output_name": "detailed_summary"
-                },
                 "HideDatasetActionexcel": {
                     "action_arguments": {},
                     "action_type": "HideDatasetAction",
                     "output_name": "excel"
                 },
-                "HideDatasetActionmlst": {
-                    "action_arguments": {},
-                    "action_type": "HideDatasetAction",
-                    "output_name": "mlst"
-                },
-                "HideDatasetActionplasmidfinder": {
-                    "action_arguments": {},
-                    "action_type": "HideDatasetAction",
-                    "output_name": "plasmidfinder"
+                "RenameDatasetActiondetailed_summary": {
+                    "action_arguments": {
+                        "newname": "staramr-detailed_summary.tsv"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "detailed_summary"
                 },
                 "RenameDatasetActionexcel": {
                     "action_arguments": {
@@ -205,12 +202,19 @@
                     "action_type": "RenameDatasetAction",
                     "output_name": "excel"
                 },
-                "RenameDatasetActionpointfinder": {
+                "RenameDatasetActionmlst": {
                     "action_arguments": {
-                        "newname": "staramr-pointfinder.tsv"
+                        "newname": "staramr-mlst.tsv"
                     },
                     "action_type": "RenameDatasetAction",
-                    "output_name": "pointfinder"
+                    "output_name": "mlst"
+                },
+                "RenameDatasetActionplasmidfinder": {
+                    "action_arguments": {
+                        "newname": "staramr-plasmidfinder.tsv"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "plasmidfinder"
                 },
                 "RenameDatasetActionresfinder": {
                     "action_arguments": {
@@ -241,11 +245,26 @@
                 "owner": "nml",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"genomes\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"advanced\": \"{\\\"exclude_genes\\\": {\\\"__current_case__\\\": 0, \\\"exclude_genes_condition\\\": \\\"default\\\"}, \\\"exclude_negatives\\\": \\\"false\\\", \\\"exclude_resistance_phenotypes\\\": \\\"false\\\", \\\"genome_size_lower_bound\\\": \\\"4000000\\\", \\\"genome_size_upper_bound\\\": \\\"6000000\\\", \\\"minimum_N50_value\\\": \\\"10000\\\", \\\"minimum_contig_length\\\": \\\"300\\\", \\\"pid_threshold\\\": \\\"98.0\\\", \\\"plasmidfinder_type\\\": \\\"include_all\\\", \\\"plength_plasmidfinder\\\": \\\"60.0\\\", \\\"plength_pointfinder\\\": \\\"95.0\\\", \\\"plength_resfinder\\\": \\\"60.0\\\", \\\"report_all_blast\\\": \\\"false\\\", \\\"unacceptable_number_contigs\\\": \\\"1000\\\"}\", \"use_pointfinder\": \"\\\"disabled\\\"\"}",
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"genomes\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"advanced\": \"{\\\"exclude_genes\\\": {\\\"__current_case__\\\": 0, \\\"exclude_genes_condition\\\": \\\"default\\\"}, \\\"exclude_negatives\\\": \\\"false\\\", \\\"exclude_resistance_phenotypes\\\": \\\"false\\\", \\\"genome_size_lower_bound\\\": \\\"4000000\\\", \\\"genome_size_upper_bound\\\": \\\"6000000\\\", \\\"minimum_N50_value\\\": \\\"10000\\\", \\\"minimum_contig_length\\\": \\\"300\\\", \\\"pid_threshold\\\": \\\"98.0\\\", \\\"plasmidfinder_type\\\": \\\"include_all\\\", \\\"plength_plasmidfinder\\\": \\\"60.0\\\", \\\"plength_pointfinder\\\": \\\"95.0\\\", \\\"plength_resfinder\\\": \\\"60.0\\\", \\\"report_all_blast\\\": \\\"false\\\", \\\"unacceptable_number_contigs\\\": \\\"1000\\\"}\", \"use_pointfinder\": \"\\\"disabled\\\"\"}",
             "tool_version": "0.7.0",
             "type": "tool",
             "uuid": "e61df3a1-dd74-408a-9c03-fbb690bd2db5",
             "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "detailed_summary",
+                    "uuid": "1110628c-a4d9-4c10-a70d-70777316f2b8"
+                },
+                {
+                    "label": null,
+                    "output_name": "mlst",
+                    "uuid": "bbc60d19-c3ae-4c3f-ade3-3316917384be"
+                },
+                {
+                    "label": null,
+                    "output_name": "settings",
+                    "uuid": "95f87b65-aa08-4a52-b075-66f1665bbb21"
+                },
                 {
                     "label": null,
                     "output_name": "summary",
@@ -253,8 +272,8 @@
                 },
                 {
                     "label": null,
-                    "output_name": "settings",
-                    "uuid": "95f87b65-aa08-4a52-b075-66f1665bbb21"
+                    "output_name": "plasmidfinder",
+                    "uuid": "b52e9803-65c8-4fc0-999e-7b609c1d9420"
                 },
                 {
                     "label": null,
@@ -265,6 +284,6 @@
         }
     },
     "tags": [],
-    "uuid": "777aed0f-2f25-4119-ab25-837e0a6020b8",
-    "version": 2
+    "uuid": "ce2d26f9-3899-4de5-85dc-070e3a42d5e7",
+    "version": 3
 }

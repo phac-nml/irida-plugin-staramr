@@ -88,9 +88,11 @@
     <output name="shovill-contigs.fasta" fileName="shovill-contigs.fasta"/>
     <output name="staramr-excel.xlsx" fileName="staramr-excel.xlsx"/>
     <output name="staramr-settings.txt" fileName="staramr-settings.txt"/>
-    <output name="staramr-pointfinder.tsv" fileName="staramr-pointfinder.tsv"/>
     <output name="staramr-resfinder.tsv" fileName="staramr-resfinder.tsv"/>
     <output name="staramr-summary.tsv" fileName="staramr-summary.tsv"/>
+    <output name="staramr-plasmidfinder.tsv" fileName="staramr-plasmidfinder.tsv"/>
+    <output name="staramr-mlst.tsv" fileName="staramr-mlst.tsv"/>
+    <output name="staramr-detailed_summary.tsv" fileName="staramr-detailed_summary.tsv"/>
   </outputs>
   <toolRepositories>
     <repository>
