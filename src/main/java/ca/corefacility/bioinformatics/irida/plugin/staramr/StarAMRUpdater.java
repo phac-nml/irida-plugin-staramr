@@ -243,27 +243,35 @@ public class StarAMRUpdater implements AnalysisSampleUpdater {
 		public String getQualityModuleClass() {
 			return qualitymoduleClass;
 		}
+
 		public String getPlasmidClass() {
 			return plasmidClass;
 		}
+
 		public String getSchemeClass() {
 			return schemeClass;
 		}
+
 		public String getSequenceTypeClass() {
 			return sequencetypeClass;
 		}
+
 		public String getGenomeLengthClass() {
 			return genomelengthClass;
 		}
+
 		public String getN50Class() {
 			return N50Class;
 		}
+
 		public String getNumContigsClass() {
 			return numcontigsClass;
 		}
+
 		public String getQualityModuleFeedbackClass() {
 			return qualitymodulefeedbackClass;
 		}
+        
 	}
 
 	/**
