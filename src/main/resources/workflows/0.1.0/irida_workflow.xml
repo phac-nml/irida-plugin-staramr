@@ -2,7 +2,7 @@
 <iridaWorkflow>
   <id>4ef5a1ad-435f-4835-b289-deddf0c3f98e</id>
   <name>STAR_AMR</name>
-  <version>0.1.0</version>
+  <version>0.7.0</version>
   <analysisType>STAR_AMR</analysisType>
   <inputs>
     <sequenceReadsPaired>sequence_reads_paired</sequenceReadsPaired>
@@ -83,16 +83,16 @@
     </parameter>
   </parameters>
   <outputs>
+    <output name="staramr-summary.tsv" fileName="staramr-summary.tsv"/>
+    <output name="staramr-detailed_summary.tsv" fileName="staramr-detailed_summary.tsv"/>
+    <output name="staramr-resfinder.tsv" fileName="staramr-resfinder.tsv"/>
+    <output name="staramr-plasmidfinder.tsv" fileName="staramr-plasmidfinder.tsv"/>
+    <output name="staramr-mlst.tsv" fileName="staramr-mlst.tsv"/>
+    <output name="staramr-excel.xlsx" fileName="staramr-excel.xlsx"/>
+    <output name="staramr-settings.txt" fileName="staramr-settings.txt"/>
     <output name="shovill-contigs.gfa" fileName="shovill-contigs.gfa"/>
     <output name="shovill-std.log" fileName="shovill-std.log"/>
     <output name="shovill-contigs.fasta" fileName="shovill-contigs.fasta"/>
-    <output name="staramr-excel.xlsx" fileName="staramr-excel.xlsx"/>
-    <output name="staramr-settings.txt" fileName="staramr-settings.txt"/>
-    <output name="staramr-resfinder.tsv" fileName="staramr-resfinder.tsv"/>
-    <output name="staramr-summary.tsv" fileName="staramr-summary.tsv"/>
-    <output name="staramr-plasmidfinder.tsv" fileName="staramr-plasmidfinder.tsv"/>
-    <output name="staramr-mlst.tsv" fileName="staramr-mlst.tsv"/>
-    <output name="staramr-detailed_summary.tsv" fileName="staramr-detailed_summary.tsv"/>
   </outputs>
   <toolRepositories>
     <repository>

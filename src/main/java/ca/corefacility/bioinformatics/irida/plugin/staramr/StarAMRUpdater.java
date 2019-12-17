@@ -45,17 +45,16 @@ public class StarAMRUpdater implements AnalysisSampleUpdater {
 
 	private static final Splitter SPLITTER = Splitter.on('\t');
 
-
 	private static final String METADATA_STARAMR_GENE = "staramr/gene";
 	private static final String METADATA_STARAMR_DRUG_CLASS = "staramr/drug-class";
-    private static final String METADATA_STARAMR_QUALITY_MODULE_CLASS = "staramr/quality-module-class";
-	private static final String METADATA_STARAMR_PLASMID_CLASS = "staramr/plasmid-class";
-	private static final String METADATA_STARAMR_SCHEME_CLASS = "staramr/scheme-class";
-	private static final String METADATA_STARAMR_SEQUENCE_TYPE_CLASS = "staramr/sequence-type-class";
-	private static final String METADATA_STARAMR_GENOME_LENGTH_CLASS = "staramr/genome-length-class";
-	private static final String METADATA_STARAMR_N50_CLASS = "staramr/N50-class";
-	private static final String METADATA_STARAMR_NUM_CONTIGS_CLASS = "staramr/num-contigs-class";
-	private static final String METADATA_STARAMR_QUALITY_MODULE_FEEDBACK_CLASS = "staramr/quality-module-feedback-class";
+	private static final String METADATA_STARAMR_QUALITY_MODULE = "staramr/quality-module";
+	private static final String METADATA_STARAMR_PLASMID = "staramr/plasmid";
+	private static final String METADATA_STARAMR_SCHEME = "staramr/scheme";
+	private static final String METADATA_STARAMR_SEQUENCE_TYPE = "staramr/sequence-type";
+	private static final String METADATA_STARAMR_GENOME_LENGTH = "staramr/genome-length";
+	private static final String METADATA_STARAMR_N50 = "staramr/N50";
+	private static final String METADATA_STARAMR_NUM_CONTIGS = "staramr/num-contigs";
+	private static final String METADATA_STARAMR_QUALITY_MODULE_FEEDBACK = "staramr/quality-module-feedback";
 
 	private MetadataTemplateService metadataTemplateService;
 	private SampleService sampleService;
@@ -87,14 +86,14 @@ public class StarAMRUpdater implements AnalysisSampleUpdater {
 	private AMRResult getStarAMRResults(Path staramrFilePath) throws IOException, PostProcessingException {
 		final int GENOTYPE_INDEX = 2;
 		final int DRUG_INDEX = 3;
-        final int QUALITY_MODULE_INDEX = 1;
-        final int PLASMID_INDEX = 4;
-        final int SCHEME_INDEX = 5;
-        final int SEQUENCE_TYPE_INDEX = 6;
-        final int GENOME_LENGTH_INDEX = 7;
-        final int N50_INDEX = 8;
-        final int NUM_CONTIGS_INDEX = 9;
-        final int QUALITY_MODULE_FEEDBACK_INDEX = 10;
+		final int QUALITY_MODULE_INDEX = 1;
+		final int PLASMID_INDEX = 4;
+		final int SCHEME_INDEX = 5;
+		final int SEQUENCE_TYPE_INDEX = 6;
+		final int GENOME_LENGTH_INDEX = 7;
+		final int N50_INDEX = 8;
+		final int NUM_CONTIGS_INDEX = 9;
+		final int QUALITY_MODULE_FEEDBACK_INDEX = 10;
 
 		final int MAX_TOKENS = 11;
 
@@ -111,14 +110,14 @@ public class StarAMRUpdater implements AnalysisSampleUpdater {
 		tokens = SPLITTER.splitToList(line);
 		String genotype = tokens.get(GENOTYPE_INDEX);
 		String drug = tokens.get(DRUG_INDEX);
-        String quality_module = tokens.get(QUALITY_MODULE_INDEX);
-        String plasmid = tokens.get(PLASMID_INDEX);
-        String scheme = tokens.get(SCHEME_INDEX);
-        String sequence_type = tokens.get(SEQUENCE_TYPE_INDEX);
-        String genome_length = tokens.get(GENOME_LENGTH_INDEX);
-        String N50 = tokens.get(N50_INDEX);
-        String num_contigs = tokens.get(NUM_CONTIGS_INDEX);
-        String quality_module_feedback = tokens.get(QUALITY_MODULE_FEEDBACK_INDEX);
+		String quality_module = tokens.get(QUALITY_MODULE_INDEX);
+		String plasmid = tokens.get(PLASMID_INDEX);
+		String scheme = tokens.get(SCHEME_INDEX);
+		String sequence_type = tokens.get(SEQUENCE_TYPE_INDEX);
+		String genome_length = tokens.get(GENOME_LENGTH_INDEX);
+		String N50 = tokens.get(N50_INDEX);
+		String num_contigs = tokens.get(NUM_CONTIGS_INDEX);
+		String quality_module_feedback = tokens.get(QUALITY_MODULE_FEEDBACK_INDEX);
 
 		line = reader.readLine();
 
@@ -156,32 +155,32 @@ public class StarAMRUpdater implements AnalysisSampleUpdater {
 			PipelineProvidedMetadataEntry staramrDrugEntry = new PipelineProvidedMetadataEntry(
 					staramrResult.getDrugClass(), "text", analysis);
 			PipelineProvidedMetadataEntry staramrQualityModuleEntry = new PipelineProvidedMetadataEntry(
-					staramrResult.getQualityModuleClass(), "text", analysis);
+					staramrResult.getQualityModule(), "text", analysis);
 			PipelineProvidedMetadataEntry staramrPlasmidEntry = new PipelineProvidedMetadataEntry(
-					staramrResult.getPlasmidClass(), "text", analysis);
+					staramrResult.getPlasmid(), "text", analysis);
 			PipelineProvidedMetadataEntry staramrSchemeEntry = new PipelineProvidedMetadataEntry(
-					staramrResult.getSchemeClass(), "text", analysis);
+					staramrResult.getScheme(), "text", analysis);
 			PipelineProvidedMetadataEntry staramrSequenceTypeEntry = new PipelineProvidedMetadataEntry(
-					staramrResult.getSequenceTypeClass(), "text", analysis);
+					staramrResult.getSequenceType(), "text", analysis);
 			PipelineProvidedMetadataEntry staramrGenomeLengthEntry = new PipelineProvidedMetadataEntry(
-					staramrResult.getGenomeLengthClass(), "text", analysis);
+					staramrResult.getGenomeLength(), "text", analysis);
 			PipelineProvidedMetadataEntry staramrN50Entry = new PipelineProvidedMetadataEntry(
-					staramrResult.getN50Class(), "text", analysis);
+					staramrResult.getN50(), "text", analysis);
 			PipelineProvidedMetadataEntry staramrNumContigsEntry = new PipelineProvidedMetadataEntry(
-					staramrResult.getNumContigsClass(), "text", analysis);
+					staramrResult.getNumContigs(), "text", analysis);
 			PipelineProvidedMetadataEntry staramrQualityModuleFeedbackEntry = new PipelineProvidedMetadataEntry(
-					staramrResult.getQualityModuleFeedbackClass(), "text", analysis);
+					staramrResult.getQualityModuleFeedback(), "text", analysis);
 
 			stringEntries.put(appendVersion(METADATA_STARAMR_GENE, workflowVersion), staramrGenotypeEntry);
 			stringEntries.put(appendVersion(METADATA_STARAMR_DRUG_CLASS, workflowVersion), staramrDrugEntry);
-            stringEntries.put(appendVersion(METADATA_STARAMR_QUALITY_MODULE_CLASS, workflowVersion), staramrQualityModuleEntry);
-            stringEntries.put(appendVersion(METADATA_STARAMR_PLASMID_CLASS, workflowVersion), staramrPlasmidEntry);
-            stringEntries.put(appendVersion(METADATA_STARAMR_SCHEME_CLASS, workflowVersion), staramrSchemeEntry);
-            stringEntries.put(appendVersion(METADATA_STARAMR_SEQUENCE_TYPE_CLASS, workflowVersion), staramrSequenceTypeEntry);
-            stringEntries.put(appendVersion(METADATA_STARAMR_GENOME_LENGTH_CLASS, workflowVersion), staramrGenomeLengthEntry);
-            stringEntries.put(appendVersion(METADATA_STARAMR_N50_CLASS, workflowVersion), staramrN50Entry);
-            stringEntries.put(appendVersion(METADATA_STARAMR_NUM_CONTIGS_CLASS, workflowVersion), staramrNumContigsEntry);
-            stringEntries.put(appendVersion(METADATA_STARAMR_QUALITY_MODULE_FEEDBACK_CLASS, workflowVersion), staramrQualityModuleFeedbackEntry);
+			stringEntries.put(appendVersion(METADATA_STARAMR_QUALITY_MODULE, workflowVersion), staramrQualityModuleEntry);
+			stringEntries.put(appendVersion(METADATA_STARAMR_PLASMID, workflowVersion), staramrPlasmidEntry);
+			stringEntries.put(appendVersion(METADATA_STARAMR_SCHEME, workflowVersion), staramrSchemeEntry);
+			stringEntries.put(appendVersion(METADATA_STARAMR_SEQUENCE_TYPE, workflowVersion), staramrSequenceTypeEntry);
+			stringEntries.put(appendVersion(METADATA_STARAMR_GENOME_LENGTH, workflowVersion), staramrGenomeLengthEntry);
+			stringEntries.put(appendVersion(METADATA_STARAMR_N50, workflowVersion), staramrN50Entry);
+			stringEntries.put(appendVersion(METADATA_STARAMR_NUM_CONTIGS, workflowVersion), staramrNumContigsEntry);
+			stringEntries.put(appendVersion(METADATA_STARAMR_QUALITY_MODULE_FEEDBACK, workflowVersion), staramrQualityModuleFeedbackEntry);
 
 			Map<MetadataTemplateField, MetadataEntry> metadataMap = metadataTemplateService
 					.getMetadataMap(stringEntries);
@@ -217,27 +216,27 @@ public class StarAMRUpdater implements AnalysisSampleUpdater {
 	private class AMRResult {
 		private String genotype;
 		private String drugClass;
-        private String qualitymoduleClass;
-        private String plasmidClass;
-        private String schemeClass;
-        private String sequencetypeClass;
-        private String genomelengthClass;
-        private String N50Class;
-        private String numcontigsClass;
-        private String qualitymodulefeedbackClass;
+		private String qualitymodule;
+		private String plasmid;
+		private String scheme;
+		private String sequencetype;
+		private String genomelength;
+		private String N50;
+		private String numcontigs;
+		private String qualitymodulefeedback;
 
-		public AMRResult(String genotype, String drugClass, String qualitymoduleClass, String plasmidClass, 
-        String schemeClass, String sequencetypeClass, String genomelengthClass, String N50Class, String numcontigsClass, String qualitymodulefeedbackClass) {
+		public AMRResult(String genotype, String drugClass, String qualitymodule, String plasmid, 
+        String scheme, String sequencetype, String genomelength, String N50, String numcontigs, String qualitymodulefeedback) {
 			this.genotype = genotype;
 			this.drugClass = drugClass;
-            this.qualitymoduleClass = qualitymoduleClass;
-            this.plasmidClass = plasmidClass;
-            this.schemeClass = schemeClass;
-            this.sequencetypeClass = sequencetypeClass;
-            this.genomelengthClass = genomelengthClass;
-            this.N50Class = N50Class;
-            this.numcontigsClass = numcontigsClass;
-            this.qualitymodulefeedbackClass = qualitymodulefeedbackClass;
+			this.qualitymodule = qualitymodule;
+			this.plasmid = plasmid;
+			this.scheme = scheme;
+			this.sequencetype = sequencetype;
+			this.genomelength = genomelength;
+			this.N50 = N50;
+			this.numcontigs = numcontigs;
+			this.qualitymodulefeedback = qualitymodulefeedback;
 		}
 
 		public String getGenotype() {
@@ -248,29 +247,29 @@ public class StarAMRUpdater implements AnalysisSampleUpdater {
 			return drugClass;
 		}
 
-		public String getQualityModuleClass() {
-			return qualitymoduleClass;
+		public String getQualityModule() {
+			return qualitymodule;
 		}
-		public String getPlasmidClass() {
-			return plasmidClass;
+		public String getPlasmid() {
+			return plasmid;
 		}
-		public String getSchemeClass() {
-			return schemeClass;
+		public String getScheme() {
+			return scheme;
 		}
-		public String getSequenceTypeClass() {
-			return sequencetypeClass;
+		public String getSequenceType() {
+			return sequencetype;
 		}
-		public String getGenomeLengthClass() {
-			return genomelengthClass;
+		public String getGenomeLength() {
+			return genomelength;
 		}
-		public String getN50Class() {
-			return N50Class;
+		public String getN50() {
+			return N50;
 		}
-		public String getNumContigsClass() {
-			return numcontigsClass;
+		public String getNumContigs() {
+			return numcontigs;
 		}
-		public String getQualityModuleFeedbackClass() {
-			return qualitymodulefeedbackClass;
+		public String getQualityModuleFeedback() {
+			return qualitymodulefeedback;
 		}
 	}
 
