@@ -48,6 +48,14 @@ public class StarAMRUpdater implements AnalysisSampleUpdater {
 
 	private static final String METADATA_STARAMR_GENE = "staramr/gene";
 	private static final String METADATA_STARAMR_DRUG_CLASS = "staramr/drug-class";
+    private static final String METADATA_STARAMR_QUALITY_MODULE_CLASS = "staramr/quality-module-class";
+	private static final String METADATA_STARAMR_PLASMID_CLASS = "staramr/plasmid-class";
+	private static final String METADATA_STARAMR_SCHEME_CLASS = "staramr/scheme-class";
+	private static final String METADATA_STARAMR_SEQUENCE_TYPE_CLASS = "staramr/sequence-type-class";
+	private static final String METADATA_STARAMR_GENOME_LENGTH_CLASS = "staramr/genome-length-class";
+	private static final String METADATA_STARAMR_N50_CLASS = "staramr/N50-class";
+	private static final String METADATA_STARAMR_NUM_CONTIGS_CLASS = "staramr/num-contigs-class";
+	private static final String METADATA_STARAMR_QUALITY_MODULE_FEEDBACK_CLASS = "staramr/quality-module-feedback-class";
 
 	private MetadataTemplateService metadataTemplateService;
 	private SampleService sampleService;
