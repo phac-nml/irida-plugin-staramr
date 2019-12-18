@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iridaWorkflow>
+  <id>4ef5a1ad-435f-4835-b289-deddf0c3f98e</id>
+  <name>STAR_AMR</name>
+  <version>0.7.0</version>
+  <analysisType>STAR_AMR</analysisType>
+  <inputs>
+    <sequenceReadsPaired>sequence_reads_paired</sequenceReadsPaired>
+    <requiresSingleSample>true</requiresSingleSample>
+  </inputs>
+  <parameters>
+    <parameter name="shovill-1-adv.nocorr" defaultValue="false">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.nocorr"/>
+    </parameter>
+    <parameter name="shovill-1-adv.mincov" defaultValue="1">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.mincov"/>
+    </parameter>
+    <parameter name="shovill-1-trim" defaultValue="false">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="trim"/>
+    </parameter>
+    <parameter name="shovill-1-adv.namefmt" defaultValue="contig%05d">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.namefmt"/>
+    </parameter>
+    <parameter name="shovill-1-adv.depth" defaultValue="100">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.depth"/>
+    </parameter>
+    <parameter name="shovill-1-adv.gsize" defaultValue="">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.gsize"/>
+    </parameter>
+    <parameter name="shovill-1-adv.kmers" defaultValue="">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.kmers"/>
+    </parameter>
+    <parameter name="shovill-1-adv.opts" defaultValue="">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.opts"/>
+    </parameter>
+    <parameter name="shovill-1-adv.minlen" defaultValue="1">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="adv.minlen"/>
+    </parameter>
+    <parameter name="shovill-1-assembler" defaultValue="spades">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.0.4" parameterName="assembler"/>
+    </parameter>
+    <parameter name="staramr-2-use_pointfinder" defaultValue="disabled">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="use_pointfinder"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.plength_plasmidfinder" defaultValue="60.0">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.plength_plasmidfinder"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.exclude_negatives" defaultValue="false">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.exclude_negatives"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.plength_resfinder" defaultValue="60.0">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.plength_resfinder"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.genome_size_lower_bound" defaultValue="4000000">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.genome_size_lower_bound"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.plength_pointfinder" defaultValue="95.0">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.plength_pointfinder"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.minimum_contig_length" defaultValue="300">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.minimum_contig_length"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.minimum_N50_value" defaultValue="10000">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.minimum_N50_value"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.genome_size_upper_bound" defaultValue="6000000">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.genome_size_upper_bound"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.exclude_resistance_phenotypes" defaultValue="false">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.exclude_resistance_phenotypes"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.plasmidfinder_type" defaultValue="include_all">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.plasmidfinder_type"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.report_all_blast" defaultValue="false">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.report_all_blast"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.unacceptable_number_contigs" defaultValue="1000">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.unacceptable_number_contigs"/>
+    </parameter>
+    <parameter name="staramr-2-advanced.pid_threshold" defaultValue="98.0">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.7.0" parameterName="advanced.pid_threshold"/>
+    </parameter>
+  </parameters>
+  <outputs>
+    <output name="staramr-summary.tsv" fileName="staramr-summary.tsv"/>
+    <output name="staramr-detailed_summary.tsv" fileName="staramr-detailed_summary.tsv"/>
+    <output name="staramr-resfinder.tsv" fileName="staramr-resfinder.tsv"/>
+    <output name="staramr-plasmidfinder.tsv" fileName="staramr-plasmidfinder.tsv"/>
+    <output name="staramr-mlst.tsv" fileName="staramr-mlst.tsv"/>
+    <output name="staramr-excel.xlsx" fileName="staramr-excel.xlsx"/>
+    <output name="staramr-settings.txt" fileName="staramr-settings.txt"/>
+    <output name="shovill-contigs.gfa" fileName="shovill-contigs.gfa"/>
+    <output name="shovill-std.log" fileName="shovill-std.log"/>
+    <output name="shovill-contigs.fasta" fileName="shovill-contigs.fasta"/>
+  </outputs>
+  <toolRepositories>
+    <repository>
+      <name>shovill</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>865119fcb694</revision>
+    </repository>
+    <repository>
+      <name>staramr</name>
+      <owner>nml</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>7573a6c11c4d</revision>
+    </repository>
+  </toolRepositories>
+</iridaWorkflow>
